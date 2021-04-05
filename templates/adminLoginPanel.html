@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login Panel</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script>
+        function control(){
+            var user_name = document.getElementById('u_se_rN_m_').value;
+            var pass_word = document.getElementById('p_a_ssW0_Rd').value;
+            if(user_name == "" || pass_word == ""){
+                document.getElementById('u_se_rN_m_').value = "";
+                document.getElementById('p_a_ssW0_Rd').value = "";
+                return false;
+            }
+            else{
+                return true;
+            }
+        }
+
+    </script>
+    <style>
+        @import url("{{ url_for('static', filename='css/adminLogin.css') }}"); 
+    </style>
+</head>
+
+<body class="bg-dark">
+    <div class="container-fluid">
+        <div class="tp_bx_n_0">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h3 class="site-Logo">Admin Panel</h3>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="body-admin-login">
+                <div class="form-content">
+                    <form action="/adminpanel" method="POST" onsubmit="return control()">
+                        <div class="form-content">
+                            <div class="title">
+                                <h3>Login to Admin Panel</h3>
+                            </div>
+                            <div class="d_at_4_0pn">
+                                <input type="text" name="u_se_rN_m" id="u_se_rN_m_" placeholder="Username">
+                                <input type="password" name="p_4ssW0_r_xd" id="p_a_ssW0_Rd" placeholder="Password">
+                                <button type="submit" class="loginBtn btn btn-outline-primary" style="margin-left: 33%;">Login</button>
+                            </div> 
+                        </div>
+                    </form>
+                </div> 
+            </div>
+        </div> 
+        
+    </div>
+</body>
+</html> 

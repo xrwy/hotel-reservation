@@ -1,0 +1,79 @@
+.container-fluid{
+    padding: 0;
+}
+.tp_bx_n_0{
+    background-color: lightgrey;
+}
+.row h3.site-Logo{
+    font-size: 30px;
+    padding:15px 0px 10px 0px;
+}
+.row .nav-ul{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    overflow: auto;
+}
+.row .nav-ul li{
+    float: left;
+}
+.row .nav-ul li a{
+    display: block;
+    color:black;
+    font-size: 16px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 500;
+    padding: 23px 16px;
+    text-decoration: none;
+}
+.body-admin-login{
+    position: relative;
+    width:100%;
+    padding: 10px;
+    margin-top: 110px;
+}
+.container .body-admin-login .title{
+    border-bottom: 3px solid darkgray;
+}
+.container .body-admin-login .title h3{
+    background-color: lightgrey;
+    text-align: center;
+    padding:15px;
+    margin: 0;
+}
+.container .body-admin-login .form-content{
+    max-width: 460px;
+    margin: auto;
+    border: 1px solid black;
+}
+.container .body-admin-login .d_at_4_0pn{
+    background-color: rgb(240, 236, 236);
+    padding: 25px;
+}
+.container .body-admin-login .d_at_4_0pn input[type="text"],input[type="password"]{
+    width:100%;
+    font-size: 16px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 500;
+    padding:11px;
+    border-radius: 5px;
+    border: 1px solid lightgrey;
+    margin-top: 30px;
+}
+.container .body-admin-login .d_at_4_0pn input[type="text"]:focus,input[type="password"]:focus{
+    outline: none;
+}
+.container .body-admin-login .d_at_4_0pn input[type="text"]{
+    margin-top: 15px;
+}
+.container .body-admin-login .d_at_4_0pn .loginBtn[type="submit"]{
+    width:30%;
+    font-size: 17px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 500;
+    margin: 30px 0px 0px 15px;
+    padding: 7px;
+    border-radius: 11px;
+}
+
+

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <script src="{{ url_for('static', filename='js/navbarMenuDropDown.js')}}"> </script>
+
+    <script>
+        function control(){
+            var name = document.getElementById('name').value;
+            var surname = document.getElementById('surname').value;
+            var email = document.getElementById('email').value;
+            var phone = document.getElementById('phone').value;
+            var adults = document.getElementById('adults').value;
+            var children = document.getElementById('children').value;
+        
+            if(name == "" || surname == "" || email == "" || phone == "" || adults == "" || children == ""){
+                return false;
+            }
+            return true;
+  
+        } 
+
+
+        function checkOne(){
+            document.getElementById('checkbox_1').value = 1;
+         }
+         function checkTwo_(){
+             document.getElementById('checkbox_2').value = 1;
+         }
+         
+         function checkThree(){
+             document.getElementById('checkbox_3').value = 1;
+         }
+
+
+
+        function checkIn(){
+            var checkIn = document.getElementById("checkIn_");
+            checkIn.value = checkIn.value;
+        }
+        function checkOut(){
+            var checkOut = document.getElementById("checkOut_");
+            checkOut.value = checkOut.value;
+        }
+         
+    </script>
+    <style>
+        @import url("{{ url_for('static', filename='css/topNav.css') }}");
+        @import url("{{ url_for('static', filename='css/body_Content_.css') }}");
+    </style>
+</head>
+<body>
+
+    <div class="container-fluid">
+        <div class="topbox"> 
+            <div class="container">
+                <nav>
+                    <div class="tp_bx_nav">
+                        <div class="logo">
+                            <span>XRWY Hotel</span>
+                        </div> 
+                        <ul class="tp_navbar" id="navbar">
+                            <li class="mainconn"><a href="" class="mainlink">Home</a></li>
+                            <li class="mainconn"><a href="" class="mainlink">Rooms</a></li>
+                            <li class="mainconn dropdown_">
+                                <a href="" class="mainlink"><span>Reservation</span></a>
+                                <div class="dropdown-menu_">
+                                    <ul class="subNavbar" id="nav">
+                                        <li><a href="">Food Rezervasyon</a></li>
+                                        <li><a href="">Spa Rezervasyon</a></li>
+                                        <li><a href="">Pool Rezervasyon</a></li>
+                                        <li><a href="">Sport Rezervasyon</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="mainconn"><a href="" class="mainlink">Promotions</a></li>
+                            <li class="mainconn"><a href="" class="mainlink">Services</a></li>
+                            <li class="mainconn"><a href="" class="mainlink">Contact & Location</a></li>
+                        </ul>
+                        <a href="javascript:void(0)" class="navbarIcon" onclick="navbarShow()">&#9776;</a>
+                        <div class="clear"></div>
+                    </div>
+                </nav>
+                
+            </div>
+        </div>
+
+        <div class="container_fluid">
+            <div class="card-box_">
+                <div class="card-header">
+                    <h5 class="text-primary" style="padding-top:11px">
+                        <a href="#reservation_" data-toggle="collapse" style="text-decoration: none;" class="btn btn-primary">
+                            Click For Reservation
+                        </a>
+                    </h5>
+                </div>
+
+                
+                <div class="container">
+                    <div class="row" style="padding: 0%;margin:0%">
+                        <div class="col-md-4" style="padding: 0%;margin:0%;border:none">
+                            <div class="card" style="border:none">
+                                <div class="card-body collapse" id="reservation_">
+                                    <form action="/reservation"  method="POST" onsubmit="return control()">
+                                        
+                                        <input type="text" name="name_" id="name" placeholder="Name"><br>
+                                        <input type="text" name="surname_" id="surname" placeholder="Surname"><br>
+                                        <input type="email" name="email_" id="email" placeholder="Email"><br>
+                                        <input type="tel" name="phone_" id="phone" placeholder="Phone"> <br>
+                                        <input type="text" name="adults_" id="adults" placeholder="Adults" class="adults">
+                                        <input type="text" name="children_" id="children" placeholder="Children" class="children"> <br>
+                
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                                <input type="checkbox" value="" name="check_box_1" onclick="checkOne()" id="checkbox_1" class="checkbox" placeholder="W"> 
+                                                <span class="option">Wifi</span>
+                                            </div>
+                                            
+                                            <div class="col-sm-5">
+                                                <input type="checkbox" value="" name="check_box_2" onclick="checkTwo_()" id="checkbox_2" class="checkbox"> 
+                                                <span class="option">Parking</span>
+                                            </div>
+    
+                                            <div class="col-sm-4">
+                                                <input type="checkbox" value="" name="check_box_3" onclick="checkThree()" id="checkbox_3" class="checkbox" name="" > 
+                                                <span class="option">Breakfast</span> <br>
+                                            </div>
+                                        </div> 
+                            
+                                        <input type="date" name="checkIn" onchange="checkIn()" id="checkIn_" value="" placeholder="CHECK-IN" class="check-in bg-primary btn btn-primary">
+                                        <input type="date" name="checkOut" onchange="checkOut()" id="checkOut_" value="" placeholder="CHECK-OUT" class="check-out bg-primary btn btn-primary"> <br>
+                                        
+                                        <button type="submit" class="send_">SEND</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div> 
+                        <div class="col-md-6 collapse" id="reservation_" style="padding: 15px 15px 15px 15px;"> 
+                            <img class="collapseImg" src="{{url_for('static', filename='img/photo.jpg')}}">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
+</body>
+</html> 
